@@ -1,18 +1,16 @@
 const express = require('express')
 const socket = require('socket.io')
-const Chance = require('chance')
 const Sentencer = require('sentencer')
 
 const app = express()
-const chance = new Chance()
 
 let users = []
 
-server = app.listen(8080, function() {
+let server = app.listen(8080, function() {
   console.log('server is running on port 8080...')
 })
 
-io = socket(server)
+let io = socket(server)
 
 io.on('connection', (socket) => {
 
