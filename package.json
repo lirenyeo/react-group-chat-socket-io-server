@@ -1,0 +1,25 @@
+{
+  "name": "group-chat-socket-io-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lirenyeo/react-group-chat-socket-io-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lirenyeo/react-group-chat-socket-io-server/issues"
+  },
+  "homepage": "https://github.com/lirenyeo/react-group-chat-socket-io-server#readme",
+  "dependencies": {
+    "chance": "^1.0.18",
+    "express": "^4.16.4",
+    "sentencer": "^0.1.5",
+    "socket.io": "^2.2.0"
+  }
+}
