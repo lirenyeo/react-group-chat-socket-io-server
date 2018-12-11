@@ -1,15 +1,23 @@
 // const express = require('express')
 // const socket = require('socket.io')
+var cors = require('cors')
 var Sentencer = require('sentencer');
-var app = require('express')();
-var server = require('http').Server(app);
-var io = require('socket.io')(server, { origins: '*:*'});
 
-server.listen(80);
+var app = require('express')();
+app.use(cors())
+
+var port = process.env.PORT || 80
+
+var server = require('http').createServer(app).listen(port);
+var io = require('socket.io').listen(server)
+
+io.set('origins', '*:*');
+
+// server.listen(80);
 // WARNING: app.listen(80) will NOT work here!
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendStatus(200)
 })
 
 let users = []
