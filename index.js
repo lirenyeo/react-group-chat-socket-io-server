@@ -1,16 +1,18 @@
-const express = require('express')
-const socket = require('socket.io')
-const Sentencer = require('sentencer')
+// const express = require('express')
+// const socket = require('socket.io')
+var Sentencer = require('sentencer');
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server, { origins: '*:*'});
 
-const app = express()
+server.listen(80);
+// WARNING: app.listen(80) will NOT work here!
 
-let users = []
-
-let server = app.listen(8080, function() {
-  console.log('server is running on port 8080...')
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
 })
 
-let io = socket(server, { origins: '*:*'});
+let users = []
 
 io.on('connection', (socket) => {
 
