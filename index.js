@@ -10,7 +10,7 @@ let server = app.listen(8080, function() {
   console.log('server is running on port 8080...')
 })
 
-let io = socket(server)
+let io = socket(server, { origins: '*:*'});
 
 io.on('connection', (socket) => {
 
