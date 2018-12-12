@@ -1,20 +1,19 @@
 // const express = require('express')
 // const socket = require('socket.io')
-var cors = require('cors')
-var Sentencer = require('sentencer');
+const cors = require('cors')
+const Sentencer = require('sentencer')
 
-var app = require('express')();
+let app = require('express')()
 app.use(cors())
 
-var port = process.env.PORT || 80
+const port = process.env.PORT || 80
 
-var server = require('http').createServer(app).listen(port);
-var io = require('socket.io').listen(server)
+const server = require('http').createServer(app).listen(port)
+let io = require('socket.io').listen(server)
 
-io.set('origins', '*:*');
+io.set('origins', '*:*')
 
-// server.listen(80);
-// WARNING: app.listen(80) will NOT work here!
+console.log('Server has started...')
 
 app.get('/', function (req, res) {
   res.sendStatus(200)
@@ -41,7 +40,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('BROADCAST_MESSAGE', data => {
-    io.emit('RECEIVE_BROADCAST', data);
+    io.emit('RECEIVE_BROADCAST', data)
   })
 
   socket.on('ACCEPT_PRIVATE_CHAT', ({roomName, initiator}) => {
@@ -99,7 +98,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('SEND_PRIVATE_MESSAGE', data => {
-    io.emit('RECEIVE_PRIVATE_MESSAGE', data);
+    io.emit('RECEIVE_PRIVATE_MESSAGE', data)
   })
 
 
