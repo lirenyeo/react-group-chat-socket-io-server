@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
     users.push(newUser)
 
     // and gives current user his id and username
-    socket.emit('GET_USER_INFO', newUser)
+    socket.emit('GET_CURRENT_USER', newUser)
 
     // and tell everyone on the server (io) to update their user list
     io.emit('UPDATE_USER_LIST', users)
