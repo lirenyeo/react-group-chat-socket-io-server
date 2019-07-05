@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/lirenyeo/react-group-chat-socket-io-server#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "chance": "^1.0.18",
     "cors": "^2.8.5",
     "express": "^4.16.4",
