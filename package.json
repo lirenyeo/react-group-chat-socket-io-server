@@ -20,7 +20,7 @@
   "dependencies": {
     "chance": "^1.0.18",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "sentencer": "^0.1.5",
     "socket.io": "^2.2.0"
   },
